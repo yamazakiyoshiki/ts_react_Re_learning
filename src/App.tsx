@@ -36,6 +36,15 @@
 
 // export default App;
 import Dashboard from "./components/Dashboard";
+import Event from "./components/Event";
+import FollowerTips from "./components/FollowerTips";
+import PropsTips from "./components/PropsTips";
+import Status from "./components/Status";
+import StyleProps from "./components/StyleProps";
+import Text from "./components/Text";
+import UseReducer from "./components/UseReducer";
+import UseState from "./components/UseState";
+import Wrapper from "./components/Wrapper";
 
 const App = () => {
   const followers = [
@@ -47,6 +56,7 @@ const App = () => {
     firstName: "yamazaki",
     lastName: "yoshiki",
   };
+
   return (
     <div>
       <Dashboard
@@ -55,6 +65,19 @@ const App = () => {
         name={name}
         followers={followers}
       />
+      <Status status="loading" />
+      <Status />
+      <Wrapper>
+        <Text>チルドレンです</Text>
+      </Wrapper>
+      <Event click={(e, text) => alert(text)} change={(e) => console.log(e)} />
+      <StyleProps style={{ fontSize: "40px", color: "red" }} />
+      <PropsTips firstName="山田" lastName="太郎" />
+      <FollowerTips
+        followerName={{ firstName: "yoshiki", lastName: "yamazaki" }}
+      />
+      <UseState />
+      <UseReducer />
     </div>
   );
 };
